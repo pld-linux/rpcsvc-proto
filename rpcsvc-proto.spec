@@ -7,6 +7,8 @@ License:	BSD
 Group:		Libraries
 Source0:	https://github.com/thkukuk/rpcsvc-proto/releases/download/v%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	629c91bbc8281fcdf64442f59a9d1705
+# based on glibc 2.31
+Patch0:		%{name}-locales.patch
 URL:		https://github.com/thkukuk/rpcsvc-proto
 BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	tar >= 1:1.22
@@ -34,6 +36,7 @@ funkcjonalności sunrpc, kiedy libtirpc ma ją zastąpić.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
@@ -46,10 +49,12 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name}
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/rpcgen
