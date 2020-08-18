@@ -7,6 +7,9 @@ License:	BSD
 Group:		Libraries
 Source0:	https://github.com/thkukuk/rpcsvc-proto/releases/download/v%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	629c91bbc8281fcdf64442f59a9d1705
+# from man-pages.spec --with tars
+Source1:	%{name}-man-pages.tar.xz
+# Source1-md5:	f8e94eda31f05c92ba2ec9857248e715
 # based on glibc 2.31
 Patch0:		%{name}-locales.patch
 URL:		https://github.com/thkukuk/rpcsvc-proto
@@ -49,6 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+tar xf %{SOURCE1} -C $RPM_BUILD_ROOT%{_mandir}
+
 %find_lang %{name}
 
 %clean
@@ -59,4 +64,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc COPYING ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/rpcgen
 %{_mandir}/man1/rpcgen.1*
+%lang(ja) %{_mandir}/ja/man1/rpcgen.1*
+%lang(ru) %{_mandir}/ru/man1/rpcgen.1*
 %{_includedir}/rpcsvc
