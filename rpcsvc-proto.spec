@@ -4,7 +4,7 @@ Name:		rpcsvc-proto
 Version:	1.4.2
 Release:	1
 License:	BSD
-Group:		Libraries
+Group:		Development/Libraries
 Source0:	https://github.com/thkukuk/rpcsvc-proto/releases/download/v%{version}/%{name}-%{version}.tar.xz
 # Source0-md5:	629c91bbc8281fcdf64442f59a9d1705
 # from man-pages.spec --with tars
