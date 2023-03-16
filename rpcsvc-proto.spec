@@ -1,12 +1,12 @@
 Summary:	rpcsvc proto.x files and rpcgen tool
 Summary(pl.UTF-8):	Pliki rpcsvc proto.x oraz narzędzie rpcgen
 Name:		rpcsvc-proto
-Version:	1.4.2
+Version:	1.4.3
 Release:	1
 License:	BSD
 Group:		Development/Libraries
 Source0:	https://github.com/thkukuk/rpcsvc-proto/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	629c91bbc8281fcdf64442f59a9d1705
+# Source0-md5:	5cc9a871db85e34ab68a9cecfb448a97
 # from man-pages.spec --with tars
 Source1:	%{name}-man-pages.tar.xz
 # Source1-md5:	f8e94eda31f05c92ba2ec9857248e715
