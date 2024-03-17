@@ -1,19 +1,19 @@
 Summary:	rpcsvc proto.x files and rpcgen tool
 Summary(pl.UTF-8):	Pliki rpcsvc proto.x oraz narzędzie rpcgen
 Name:		rpcsvc-proto
-Version:	1.4.3
+Version:	1.4.4
 Release:	1
 License:	BSD
 Group:		Development/Libraries
 Source0:	https://github.com/thkukuk/rpcsvc-proto/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	5cc9a871db85e34ab68a9cecfb448a97
+# Source0-md5:	bf908de360308d909e9cc469402ff2ef
 # from man-pages.spec --with tars
 Source1:	%{name}-man-pages.tar.xz
 # Source1-md5:	f8e94eda31f05c92ba2ec9857248e715
 # based on glibc 2.31
 Patch0:		%{name}-locales.patch
 URL:		https://github.com/thkukuk/rpcsvc-proto
-BuildRequires:	gettext-tools >= 0.19.8
+BuildRequires:	gettext-tools >= 0.20.2
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 # glibc used to include proto.x files in glibc-headers and rpcgen in main package
