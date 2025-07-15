@@ -39,7 +39,7 @@ funkcjonalności sunrpc, kiedy libtirpc ma ją zastąpić.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %configure
